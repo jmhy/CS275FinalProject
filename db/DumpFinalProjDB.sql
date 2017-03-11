@@ -60,9 +60,9 @@ DROP TABLE IF EXISTS `muscles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `muscles` (
-  `m_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `img_filepath` varchar(1024) DEFAULT NULL,
+  `m_id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `img_filepath` varchar(50) NOT NULL,
   PRIMARY KEY (`m_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -73,6 +73,7 @@ CREATE TABLE `muscles` (
 
 LOCK TABLES `muscles` WRITE;
 /*!40000 ALTER TABLE `muscles` DISABLE KEYS */;
+INSERT INTO `muscles` VALUES (1,'Abs','\\images\\muscles\\abs.jpg'),(2,'Biceps','\\images\\muscles\\biceps.jpg'),(3,'Calves','\\images\\muscles\\calves.jpg'),(4,'Chest','\\images\\muscles\\chest.jpg'),(5,'Forearms','\\images\\muscles\\forearms.jpg'),(6,'Glutes','\\images\\muscles\\glutes.jpg'),(7,'Hamstrings','\\images\\muscles\\hamstrings.jpg'),(8,'Lats','\\images\\muscles\\lats.jpg'),(9,'Lower Back','\\images\\muscles\\back_lower.jpg'),(10,'Middle Back','\\images\\muscles\\back_middle.jpg'),(11,'Quads','\\images\\muscles\\quads.jpg'),(12,'Shoulders','\\images\\muscles\\shoulders.jpg'),(13,'Traps','\\images\\muscles\\traps.jpg'),(14,'Triceps','\\images\\muscles\\triceps.jpg');
 /*!40000 ALTER TABLE `muscles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -150,4 +151,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-10 20:49:07
+-- Dump completed on 2017-03-11  2:40:04
