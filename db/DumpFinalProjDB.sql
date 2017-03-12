@@ -35,7 +35,19 @@ CREATE TABLE `exercises` (
   `fk_muscle4_id` int(11) DEFAULT NULL,
   `fk_muscle5_id` int(11) DEFAULT NULL,
   `fk_muscle6_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`exercise_id`)
+  PRIMARY KEY (`exercise_id`),
+  KEY `fk_muscle1_id` (`fk_muscle1_id`),
+  KEY `fk_muscle2_id` (`fk_muscle2_id`),
+  KEY `fk_muscle3_id` (`fk_muscle3_id`),
+  KEY `fk_muscle4_id` (`fk_muscle4_id`),
+  KEY `fk_muscle5_id` (`fk_muscle5_id`),
+  KEY `fk_muscle6_id` (`fk_muscle6_id`),
+  CONSTRAINT `exercises_ibfk_1` FOREIGN KEY (`fk_muscle1_id`) REFERENCES `muscles` (`m_id`),
+  CONSTRAINT `exercises_ibfk_2` FOREIGN KEY (`fk_muscle2_id`) REFERENCES `muscles` (`m_id`),
+  CONSTRAINT `exercises_ibfk_3` FOREIGN KEY (`fk_muscle3_id`) REFERENCES `muscles` (`m_id`),
+  CONSTRAINT `exercises_ibfk_4` FOREIGN KEY (`fk_muscle4_id`) REFERENCES `muscles` (`m_id`),
+  CONSTRAINT `exercises_ibfk_5` FOREIGN KEY (`fk_muscle5_id`) REFERENCES `muscles` (`m_id`),
+  CONSTRAINT `exercises_ibfk_6` FOREIGN KEY (`fk_muscle6_id`) REFERENCES `muscles` (`m_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -154,7 +166,26 @@ CREATE TABLE `workout_day` (
   `e10_dist` float DEFAULT NULL,
   `e10_dur` time DEFAULT NULL,
   `e10_rest` time DEFAULT NULL,
-  PRIMARY KEY (`workout_day_id`)
+  PRIMARY KEY (`workout_day_id`),
+  KEY `fk_ex1_id` (`fk_ex1_id`),
+  KEY `fk_ex2_id` (`fk_ex2_id`),
+  KEY `fk_ex3_id` (`fk_ex3_id`),
+  KEY `fk_ex4_id` (`fk_ex4_id`),
+  KEY `fk_ex5_id` (`fk_ex5_id`),
+  KEY `fk_ex6_id` (`fk_ex6_id`),
+  KEY `fk_ex7_id` (`fk_ex7_id`),
+  KEY `fk_ex8_id` (`fk_ex8_id`),
+  KEY `fk_ex10_id` (`fk_ex10_id`),
+  CONSTRAINT `workout_day_ibfk_1` FOREIGN KEY (`fk_ex1_id`) REFERENCES `exercises` (`exercise_id`),
+  CONSTRAINT `workout_day_ibfk_10` FOREIGN KEY (`fk_ex10_id`) REFERENCES `exercises` (`exercise_id`),
+  CONSTRAINT `workout_day_ibfk_2` FOREIGN KEY (`fk_ex2_id`) REFERENCES `exercises` (`exercise_id`),
+  CONSTRAINT `workout_day_ibfk_3` FOREIGN KEY (`fk_ex3_id`) REFERENCES `exercises` (`exercise_id`),
+  CONSTRAINT `workout_day_ibfk_4` FOREIGN KEY (`fk_ex4_id`) REFERENCES `exercises` (`exercise_id`),
+  CONSTRAINT `workout_day_ibfk_5` FOREIGN KEY (`fk_ex5_id`) REFERENCES `exercises` (`exercise_id`),
+  CONSTRAINT `workout_day_ibfk_6` FOREIGN KEY (`fk_ex6_id`) REFERENCES `exercises` (`exercise_id`),
+  CONSTRAINT `workout_day_ibfk_7` FOREIGN KEY (`fk_ex7_id`) REFERENCES `exercises` (`exercise_id`),
+  CONSTRAINT `workout_day_ibfk_8` FOREIGN KEY (`fk_ex8_id`) REFERENCES `exercises` (`exercise_id`),
+  CONSTRAINT `workout_day_ibfk_9` FOREIGN KEY (`fk_ex8_id`) REFERENCES `exercises` (`exercise_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -188,7 +219,21 @@ CREATE TABLE `workout_plan` (
   `fk_workout_thu` int(11) DEFAULT NULL,
   `fk_workout_fri` int(11) DEFAULT NULL,
   `fk_workout_sat` int(11) DEFAULT NULL,
-  PRIMARY KEY (`plan_id`)
+  PRIMARY KEY (`plan_id`),
+  KEY `fk_workout_sun` (`fk_workout_sun`),
+  KEY `fk_workout_mon` (`fk_workout_mon`),
+  KEY `fk_workout_tue` (`fk_workout_tue`),
+  KEY `fk_workout_wed` (`fk_workout_wed`),
+  KEY `fk_workout_thu` (`fk_workout_thu`),
+  KEY `fk_workout_fri` (`fk_workout_fri`),
+  KEY `fk_workout_sat` (`fk_workout_sat`),
+  CONSTRAINT `workout_plan_ibfk_1` FOREIGN KEY (`fk_workout_sun`) REFERENCES `workout_day` (`workout_day_id`),
+  CONSTRAINT `workout_plan_ibfk_2` FOREIGN KEY (`fk_workout_mon`) REFERENCES `workout_day` (`workout_day_id`),
+  CONSTRAINT `workout_plan_ibfk_3` FOREIGN KEY (`fk_workout_tue`) REFERENCES `workout_day` (`workout_day_id`),
+  CONSTRAINT `workout_plan_ibfk_4` FOREIGN KEY (`fk_workout_wed`) REFERENCES `workout_day` (`workout_day_id`),
+  CONSTRAINT `workout_plan_ibfk_5` FOREIGN KEY (`fk_workout_thu`) REFERENCES `workout_day` (`workout_day_id`),
+  CONSTRAINT `workout_plan_ibfk_6` FOREIGN KEY (`fk_workout_fri`) REFERENCES `workout_day` (`workout_day_id`),
+  CONSTRAINT `workout_plan_ibfk_7` FOREIGN KEY (`fk_workout_sat`) REFERENCES `workout_day` (`workout_day_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -211,4 +256,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-11 22:59:35
+-- Dump completed on 2017-03-12 14:25:17
