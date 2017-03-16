@@ -1,7 +1,127 @@
 <!DOCTYPE html>
-<!-- saved from url=(0053)file:///C:/Users/Ameet/Downloads/Practivum/part1.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    <style type="text/css">
+<html>
+
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+
+
+$(document).ready(function()
+{
+$('h1').click(function(){
+		var urls = "http://localhost:8080/legs"; // creating url
+		var obj = {
+		
+		}; // JSON object
+		$.ajax({ // ajax session to send express request 
+			type:"GET", 
+			url: urls,
+			data: obj,		
+					
+			success: function(data) { // ajax success function
+						var res = data;
+						alert("Success");
+			}, 
+			error: function(jqXHR, textStatus, errorThrown) {
+					alert("Error fetching data!!"); // alert if error is thrown
+				},
+			dataType: "json"
+		});
+});
+
+$('h2').click(function(){
+		var urls = "http://localhost:8080/chest"; // creating url
+		var obj = {
+		
+		}; // JSON object
+		$.ajax({ // ajax session to send express request 
+			type:"GET", 
+			url: urls,
+			data: obj,		
+					
+			success: function(data) { // ajax success function
+						var res = data;
+						alert("Success");
+			}, 
+			error: function(jqXHR, textStatus, errorThrown) {
+					alert("Error fetching data!!"); // alert if error is thrown
+				},
+			dataType: "json"
+		});
+});
+
+$('h3').click(function(){
+    var urls = "http://localhost:8080/arms"; // creating url
+		var obj = {
+		
+		}; // JSON object
+		$.ajax({ // ajax session to send express request 
+			type:"GET", 
+			url: urls,
+			data: obj,		
+					
+			success: function(data) { // ajax success function
+						var res = data;
+						alert("Success");
+			}, 
+			error: function(jqXHR, textStatus, errorThrown) {
+					alert("Error fetching data!!"); // alert if error is thrown
+				},
+			dataType: "json"
+		});
+});
+
+$('h4').click(function(){
+    var urls = "http://localhost:8080/back"; // creating url
+		var obj = {
+		
+		}; // JSON object
+		$.ajax({ // ajax session to send express request 
+			type:"GET", 
+			url: urls,
+			data: obj,		
+					
+			success: function(data) { // ajax success function
+						var res = data;
+						alert("Success");
+			}, 
+			error: function(jqXHR, textStatus, errorThrown) {
+					alert("Error fetching data!!"); // alert if error is thrown
+				},
+			dataType: "json"
+		});
+});
+
+$('h5').click(function(){
+    var urls = "http://localhost:8080/abs"; // creating url
+		var obj = {
+		
+		}; // JSON object
+		$.ajax({ // ajax session to send express request 
+			type:"GET", 
+			url: urls,
+			data: obj,		
+					
+			success: function(data) { // ajax success function
+						var res = data;
+						alert("Success");
+			}, 
+			error: function(jqXHR, textStatus, errorThrown) {
+					alert("Error fetching data!!"); // alert if error is thrown
+				},
+			dataType: "json"
+		});
+});
+
+});
+
+</script>
+
+<style type="text/css">
 
         .cover {
             background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(http://www.hydroxycut.ca/wp-content/uploads/background-gym.jpg);
@@ -17,7 +137,7 @@
             background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://i1.wp.com/primehealthsolutions.org/wp-content/uploads/2015/08/leg-workout-for-women.jpg?resize=1024%2C712);
             background-size: cover;
             width: 750px;
-            height: 200px;
+            height: 500px;
             margin: 10px 0 0 10px;
             position: relative;
             float: left;
@@ -28,7 +148,7 @@
             background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://i0.wp.com/primehealthsolutions.org/wp-content/uploads/2015/09/back-workout-for-women.jpg);
             background-size: cover;
             width: 500px;
-            height: 200px;
+            height: 500px;
             margin: 10px 0 0 10px;
             position: relative;
             float: left;
@@ -36,10 +156,10 @@
         }
 
         .arms {
-            background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(http://healthchanging.com/wp-content/uploads/2015/12/health4.png);
+            background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(http://howtoreducepound.com/wp-content/uploads/2016/01/giamcan10-2.png);
             background-size: cover;
             width: 750px;
-            height: 200px;
+            height: 500px;
             margin: 10px 0 0 10px;
             position: relative;
             float: left;
@@ -50,7 +170,7 @@
             background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://i.ytimg.com/vi/nqhglLyzbLw/maxresdefault.jpg);
             background-size: cover;
             width: 500px;
-            height: 200px;
+            height: 500px;
             margin: 10px 0 0 10px;
             position: relative;
             float: left;
@@ -61,7 +181,7 @@
             background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(http://leanstop.com/wp-content/uploads/2016/02/level_up___push_ups____by_willcook-d67rhr5.jpg);
             background-size: cover;
             width: 500px;
-            height: 200px;
+            height: 500px;
             margin: 10px 0 0 10px;
             position: relative;
             float: left;
@@ -148,6 +268,6 @@
 
 
 
+</body>
 
-
-</body></html>
+</html>
